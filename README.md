@@ -1,1 +1,1 @@
-Each folder represents a project corresponding to its name.
+# Each folder represents a project corresponding to its name.
