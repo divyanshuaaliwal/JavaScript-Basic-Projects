@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rocket Follow Mouse</title>
+        
+
+        <style>
+            
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: "Gilroy";
+            }
+
+            html, body {
+                height: 100%;
+                width: 100%;
+            }
+
+            #main {
+                height: 100%;
+                width: 100%;
+                background-color: #222;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            input {
+                display: none;
+            }
+
+            #btn {
+                padding: 12px 22px;
+                background: rgb(41, 143, 114);
+                color: white;
+                border-radius: 5px;
+            }
+                       
+            #btn:hover { 
+                background: rgb(13, 118, 88);
+            }
+ 
+        </style>
+
+    </head>
+
+    <body>
+        
+        <div id="main">
+            <input id="mainInput" type="file">
+            <div id="btn">
+                Uplode File
+            </div>
+        </div>
+
+
+        <script>
+            
+          
+            let mainInput = document.getElementById("mainInput");
+            let btn = document.getElementById("btn");
+
+            btn.addEventListener("click", () => {
+                mainInput.click();
+            });
+
+            mainInput.addEventListener("change", (event) => {
+
+                if(event.target.files.length > 0) {
+                    btn.textContent = event.target.files[0].name;
+                }
+
+            });
+
+        </script>
+    </body>
+
+</html>
